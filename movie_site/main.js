@@ -197,7 +197,7 @@ if (pathname === "index.html") {
   userInformation = JSON.parse(localStorage.getItem("userInformation"));
   if (userInformation) {
     console.log("userInformation", userInformation);
-    user.innerHTML = `${userInformation.nameLast} ${userInformation.nameFirst}さん、お帰りなさい。`;
+    user.innerHTML = `${userInformation.menberName}さん、お帰りなさい。`;
   } else {
     user.innerHTML = "ゲストログイン中";
   }
@@ -492,10 +492,8 @@ function returnDayMovies(currentYear, currentMonth, dayCount) {
 //設定
 if (pathname === "setting.html") {
   loadHeader();
-  const furiganaLast = document.getElementById("furigana-last");//ふりがな（せい）
-  const furiganaFirst = document.getElementById("furigana-first");//ふりがな（めい）
-  const nameLast = document.getElementById("name-last");//名前（姓）
-  const nameFirst = document.getElementById("name-first");//名前（名）
+  const furigana = document.getElementById("furigana");//ふりがな
+  const menberName = document.getElementById("menberName");//名前
   const gender = document.getElementById("gender");//性別
   const birthday = document.getElementById("birthday");//生年月日
   const clickSubmit = document.getElementById("submit");//送信
@@ -504,10 +502,8 @@ if (pathname === "setting.html") {
   userInformation = JSON.parse(localStorage.getItem("userInformation"));
   if (userInformation) {
     console.log("userInformation", userInformation);
-    furiganaLast.value = userInformation.furiganaLast;
-    furiganaFirst.value = userInformation.furiganaFirst;
-    nameLast.value = userInformation.nameLast;
-    nameFirst.value = userInformation.nameFirst;
+    furigana.value = userInformation.furigana;
+    menberName.value = userInformation.menberName;
     gender.value = userInformation.gender;
     birthday.value = userInformation.birthday;
     password.value = userInformation.password;
@@ -535,20 +531,12 @@ if (pathname === "setting.html") {
   // 送信
   clickSubmit.addEventListener("click", e => {
     // 入力値のチェック
-    if (!furiganaLast.value) {
-      alert("ふりがな（せい）の値を入力してください。");
+    if (!furigana.value) {
+      alert("ふりがなを入力してください。");
       return;
     }
-    if (!furiganaFirst.value) {
-      alert("ふりがな（めい）の値を入力してください。");
-      return;
-    }
-    if (!nameLast.value) {
-      alert("名前（姓）の値を入力してください。");
-      return;
-    }
-    if (!nameFirst.value) {
-      alert("名前（名）の値を入力してください。");
+    if (!menberName.value) {
+      alert("名前を入力してください。");
       return;
     }
     if (!gender.value) {
@@ -575,17 +563,15 @@ if (pathname === "setting.html") {
     const maskPassword = "*".repeat(password.value.length);
     if (confirm(
       `下記の内容で登録してよろしいでしょうか？\r\n
-      ふりがな：${furiganaLast.value} ${furiganaFirst.value}\r\n
-      名前：${nameLast.value} ${nameFirst.value}\r\n
+      ふりがな：${furigana}\r\n
+      名前：${menberName}\r\n
       性別：${gender.value}\r\n
       生年月日：${birthday.value}\r\n
       パスワード：${maskPassword}`
     )) {
       userInformation = {
-        furiganaLast: furiganaLast.value,
-        furiganaFirst: furiganaFirst.value,
-        nameLast: nameLast.value,
-        nameFirst: nameFirst.value,
+        furigana: furigana.value,
+        menberName: menberName.value,
         gender: gender.value,
         birthday: birthday.value,
         password: password.value
