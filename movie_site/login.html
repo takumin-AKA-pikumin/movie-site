@@ -26,8 +26,29 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
+        .login-form h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .login-form .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        .login-form .input-group label {
+            margin-right: 10px;
+            font-size: 14px;
+            width: 80px;
+            text-align: right;
+        }
+
         .login-form input {
-            margin: 10px 0;
             padding: 10px;
             width: 200px;
             border: 1px solid #ccc;
@@ -50,13 +71,68 @@
         .login-form button:hover {
             background-color: #0056b3;
         }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .action-links p {
+            margin: 20px 0 0 0;
+        }
+
+        .action-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .action-links div {
+            display: inline-block;
+        }
+        .action-links button {
+            margin:10px 10px 10px 10px;
+        }
     </style>
 </head>
 <body>
     <div class="login-form">
-        <input type="text" placeholder="ID">
-        <input type="password" placeholder="パスワード">
-        <button onclick="location.href='./index.html'">送信</button>
+        <h1>映画サイトへようこそ！</h1>
+        <div class="input-group">
+            <label for="login-id">ID</label>
+            <input type="text" id="login-id" placeholder="ID">
+        </div>
+        <div class="input-group">
+            <label for="login-pass">パスワード</label>
+            <input type="login-pass" id="login-pass" placeholder="パスワード">
+        </div>
+        <div id="error-message" class="error-message" style="display: none;">IDまたはパスワードが間違っています。</div>
+        <button onclick="validateLogin()">ログイン</button>
+
+        <div class="action-links">
+            <p>ログインIDをお持ちでない場合</p>
+            <div>
+                <button onclick="location.href='./setting.html'">新規作成</button>
+                <span>または</span>
+                <button onclick="location.href='./index.html'">ゲストログイン</button>
+            </div>
+        </div>
     </div>
+
+    <script>
+        function validateLogin() {
+            var loginId = document.getElementById('login-id').value;
+            var loginPass = document.getElementById('login-pass').value;
+            var errorMessage = document.getElementById('error-message');
+            
+            // IDまたはパスワードが空の場合はエラーメッセージを表示
+            if (loginId.trim() === "" || loginPass.trim() === "") {
+                errorMessage.style.display = 'block';
+            } else {
+                errorMessage.style.display = 'none';
+                // ログインが成功した場合の処理
+                location.href = './index.html';
+            }
+        }
+    </script>
 </body>
 </html>
