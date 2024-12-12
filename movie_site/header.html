@@ -1,0 +1,43 @@
+<header class="header">
+  <div class="navtext-container">
+      <div class="navtext">Now Playing</div>
+  </div>
+  <input type="checkbox" class="menu-btn" id="menu-btn">
+  <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
+  <ul class="menu">
+      <li class="top"><a href="./calendar.html" id="calendarNavi">カレンダー</a></li>
+      <li><a href="./mypage.html">MYPAGE</a></li>
+      <li><a href="./setting.html">設定</a></li>
+      <li><a href="./index.html" id="indexNavi">一覧</a></li>
+  </ul>
+  <button class="logout-btn" onclick="location.href='./login.html'" style="position: relative; z-index: 10;">ログアウト</button>
+</header>
+
+<style>
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navtext-container {
+  flex-grow: 1;
+}
+
+.logout-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
+</style>

@@ -1,0 +1,49 @@
+#top-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background: white;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d1dce5;
+    z-index: 999;
+  }
+  
+  #top-header-home {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: black;
+  }
+  
+  main {
+    margin-top: 5rem; /*上に空白を追加*/
+  }
+  
+  .main-area {
+    background-color: #797979;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    border-radius: 10px;
+  }
+  
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #ffffff;
+    border-top: 1px solid #d1dce5;
+  }
+  
+  footer > p {
+    margin: 0.25rem 0;
+  }

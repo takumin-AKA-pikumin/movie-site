@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Now Playing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <div id="header"></div>
+    <!-- メイン -->
+    <div class="calendarHeader">
+        <form>
+            <div style="text-align: right;"><button id="signOut">サインアウト</button></div>
+            <div style="font-size: 25px; color: black;">下記より会員登録をしてください。</div>
+    
+            <!-- ふりがな -->
+            <div class="form-group">
+                <label for="furigana-last">ふりがな（姓）</label>
+                <input type="text" id="furigana-last" name="furigana-last" placeholder="せい" required>
+            </div>
+            <div class="form-group">
+                <label for="furigana-first">ふりがな（名）</label>
+                <input type="text" id="furigana-first" name="furigana-first" placeholder="めい" required>
+            </div>
+    
+            <!-- 名前 -->
+            <div class="form-group">
+                <label for="name-last">名前（姓）</label>
+                <input type="text" id="name-last" name="name-last" placeholder="姓" required>
+            </div>
+            <div class="form-group">
+                <label for="name-first">名前（名）</label>
+                <input type="text" id="name-first" name="name-first" placeholder="名" required>
+            </div>
+    
+            <!-- 性別選択 -->
+            <div class="form-group">
+                <label for="gender">性別</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">男性</option>
+                    <option value="female">女性</option>
+                </select>
+            </div>
+    
+            <!-- 生年月日 -->
+            <div class="form-group">
+                <label for="birthday">生年月日</label>
+                <input type="date" id="birthday" name="birthday" required>
+            </div>
+    
+            <!-- パスワード -->
+            <div class="form-group">
+                <label for="password">パスワード</label>
+                <input type="password" id="password" name="password" required>
+                <span class="toggle-password">👁️</span>
+            </div>
+    
+            <!-- 送信ボタン -->
+            <button type="submit" id="submit">送信</button>
+        </form>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

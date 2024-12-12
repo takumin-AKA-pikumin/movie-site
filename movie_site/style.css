@@ -1,0 +1,389 @@
+html,
+body {
+  background-color: #918e8e;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+  font-family: "Futura", Helvetica, sans-serif;
+}
+
+/* Navbar & Navmenu color */
+:root {
+  --background-navbar: rgba(55, 55, 55, 0.98);
+}
+
+.header {
+  top: 0;
+  background: var(--background-navbar);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+}
+
+/* Nav items */
+.menu {
+  list-style: none;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  margin-top: 52px;
+  padding: 0 0 10px 0;
+  clear: both;
+  background: var(--background-navbar);
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  transform: scale(1, 0);
+  transform-origin: top;
+}
+
+/* Hamburger menu button */
+.menu-btn:checked ~ .menu {
+  transform: scale(1, 1);
+  transform-origin: top;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
+
+/* Hamburger menbu text */
+.menu a {
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ddd;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.menu li {
+  border-top: 1px solid rgb(75, 75, 75);
+  padding: 15px 0;
+  margin: 0 54px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.menu-btn:checked ~ .menu a,
+.menu-btn:checked ~ .menu li {
+  opacity: 1;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
+}
+
+.menu-btn {
+  display: none;
+}
+
+.menu-icon {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding: 24px 14px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.navicon {
+  background: #ddd;
+  display: block;
+  height: 3px;
+  width: 26px;
+  position: relative;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
+
+.navicon:before,
+.navicon:after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #ddd;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
+
+.navicon:before {
+  top: 9px;
+}
+
+.navicon:after {
+  bottom: 9px;
+}
+
+/* Hamburger Menu Animation Start */
+.menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
+  top: 0;
+}
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  bottom: 0;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon {
+  background: rgba(0, 0, 0, 0);
+  transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
+/* Hamburger Menu Animation End */
+
+/* Navbar Container */
+.navtext-container {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navbar Text */
+.navtext {
+  position: absolute;
+  text-transform: uppercase;
+  color: #ddd;
+  letter-spacing: 4px;
+  font-size: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+#user {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  font-size: 30px;
+  margin: 70px auto auto auto;
+}
+
+#search {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+#app {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 50px auto auto auto;
+}
+
+.item {
+  width: 25%;
+  padding: 10px;
+
+  .title {
+    margin: 4px 0 0;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    border: 3px solid #fff;
+  }
+}
+
+#click-btn {
+  display: block;
+  margin: 20px auto;
+  background-color: purple;
+  color: white;
+  border: 0;
+  padding: 6px 10px;
+}
+
+#popup-wrapper {
+  background-color: rgba(0, 0, 0, .5);
+  position: fixed;
+  margin: auto; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  overflow: scroll;
+}
+
+#popup-inside {
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  margin: 10% auto;
+  padding: 20px;
+  position: relative;
+}
+
+#popup-inside h3 {
+  color: black;
+  text-align: left;
+  /* text-decoration: underline; */
+}
+
+#popup-inside h4 {
+  color: black;
+  text-align: left;
+}
+
+#popup_poster {
+  margin-top: 20px;
+  width: 75%;
+}
+
+#close {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  cursor: pointer;
+  color: black;
+}
+
+#favorite {
+  margin: 10px 10px 10px 0;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  color: black;
+}
+
+#sendBtn {
+  background: black;
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  padding: 6px 10px;
+}
+
+#popup_comment {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#textarea {
+  margin: 0px 0px 20px 0px;
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 1000px) {
+  .item {
+    width: 33.333%;  
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .item {
+    width: 50%;  
+  }
+}
+
+/* カレンダー */
+.calendar-wrap {
+  margin: 60px auto auto auto;
+  max-width: 1110px;
+  /* display: grid; */
+  /* grid-template-columns: repeat(2, 1fr); */
+  gap: 40px;
+}
+@media (max-width: 767.98px) {
+  .calendar-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.calendar {
+  width: 100%;
+  border-collapse: collapse;
+}
+.calendar th,
+.calendar td {
+  border: 1px solid #000;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.calendar th {
+  padding: 6px 10px;
+}
+/* .calendar td {} */
+@media (max-width: 767.98px) {
+  .calendar th,
+  .calendar td {
+    padding: 6px;
+    font-size: 12px;
+  }
+  .calendar th {
+    padding: 3px 6px;
+  }
+}
+
+.calendar .sun {
+  color: #e17f7e;
+  background-color: #f8e4e2;
+}
+.calendar .sat {
+  color: #7ab6f3;
+  background-color: #e7f6fd;
+}
+.calendar .weekdays {
+  background-color: #5d5d5e;
+}
+.calendar .mute {
+  color: #aaa;
+}
+.calendar .today {
+  background-color: #7d7d7d;
+}
+.calendar .off {
+  background-color: #fadcdb;
+}
+.calendarHeader {
+  margin: 55px auto auto auto;
+}
+/* カレンダー */
+
+.mypageText {
+  width: 100%;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  text-decoration: underline;
+}
+
+/* 設定 */
+label {
+  display: inline-block;
+  width: 120px;  
+  text-align: right;  
+  margin-right: 10px; 
+}
+
+input, select {
+  margin-bottom: 10px;  
+  width: 200px; 
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+/* 設定 */

@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>TMDb API SAmple</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <!-- ヘッダー -->
+    <div id="header"></div>
+    <!-- メイン -->
+    <div id="user"></div>
+    <div id="search">
+      <button id="sortUpDate" class="sortUpDate" style="margin-right: 15px;">↑上映順</button>
+      <button id="sortDownDate" class="sortDownDate" style="margin-right: 15px;">↓上映順</button>
+      <button id="sortName" class="sortName" style="margin-right: 15px;">名前順</button>
+      <button id="deleteHistory" class="deleteHistory" style="margin-right: 15px;">履歴削除</button>
+      <div></div>検索：<input type="text" id="text_form">
+    </div>
+    <div id="app"></div>
+    <!-- ポップアップ -->
+    <div id="popup-wrapper">
+      <div id="popup-inside">
+        <div id="favorite"><button id="favoriteMovie">いいねする</button></div>
+        <div id="close">✖</div>
+        <img id="popup_poster" src="" alt="">
+          <h4>【タイトル】</h4>
+          <h3 id="popup_title"></h3>
+          <h4>【公開日】</h4>
+          <h3 id="popup_releaseDate"></h3>
+          <h4>【評価】</h4>
+          <h3 id="popup_review"></h3>
+          <h4>【概要】</h4>
+          <h3 id="popup_overview"></h3>
+          <h4>【コメント】</h4>
+          <textarea name="" id="popup_comment" rows="5"></textarea>
+          <br>
+          <div><button id="sendBtn">送信</button></div>
+          <br>
+          <div><a href="#" id="serchMovie" target="_blank">より詳細な情報を検索</a></div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

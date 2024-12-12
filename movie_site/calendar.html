@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カレンダー</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ヘッダー -->
+    <div id="header"></div>
+    <!-- メイン -->
+    <div><p id="calendarHeader" class="calendarHeader">2024年8月</p></div>
+    <div><span id="lastMonth">←</span><span id="nextMonth">→</span></div>
+    <div id="calendar" class="calendar-wrap"></div>
+    <!-- ポップアップ -->
+    <div id="popup-wrapper">
+        <div id="popup-inside">
+            <div id="favorite"><button id="favoriteMovie">いいねする</button></div>
+            <div id="close">✖</div>
+            <img id="popup_poster" src="" alt="">
+              <h4>【タイトル】</h4>
+              <h3 id="popup_title"></h3>
+              <h4>【公開日】</h4>
+              <h3 id="popup_releaseDate"></h3>
+              <h4>【評価】</h4>
+              <h3 id="popup_review"></h3>
+              <h4>【概要】</h4>
+              <h3 id="popup_overview"></h3>
+              <h4>【コメント】</h4>
+              <textarea name="" id="popup_comment" style="margin-bottom: 15px;" cols="80" rows="5"></textarea>
+              <br>
+              <div><button id="sendBtn">送信</button></div>
+              <br>
+              <div><a href="#" id="serchMovie" target="_blank">より詳細な情報を検索</a></div>
+          </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
